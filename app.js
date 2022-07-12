@@ -2,7 +2,7 @@
 const reviews = [
   {
     id: 1,
-    name: "susan smith",
+    name: "stephanie barner",
     job: "web developer",
     img:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
@@ -11,7 +11,7 @@ const reviews = [
   },
   {
     id: 2,
-    name: "anna johnson",
+    name: "ruben fouche",
     job: "web designer",
     img:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg",
@@ -20,7 +20,7 @@ const reviews = [
   },
   {
     id: 3,
-    name: "peter jones",
+    name: "amber holman",
     job: "intern",
     img:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg",
@@ -29,13 +29,22 @@ const reviews = [
   },
   {
     id: 4,
-    name: "bill anderson",
+    name: "lucas howarth",
     job: "the boss",
     img:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg",
     text:
       "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
   },
+  {
+    id: 5,
+    name: "jordan spencer",
+    job: "operatons manager",
+    img:
+      "https://img.freepik.com/free-photo/pleasant-looking-serious-man-stands-profile-has-confident-expression-wears-casual-white-t-shirt_273609-16959.jpg?w=2000",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum elit sit amet sollicitudin fringilla. Fusce commodo mi eget nisi literally flexitarian irony, vape marfa unicorn.",
+  }
 ];
 
 //select items
@@ -83,3 +92,15 @@ prevBtn.addEventListener('click', () => {
   }
   showPerson();
 });
+
+//function for random button
+randomBtn.addEventListener('click', () => {
+  currentItem = randomRange(0, reviews.length-1);
+  showPerson();
+})
+
+//function for generating a random number
+function randomRange(myMin, myMax) {
+  const num = Math.floor(Math.random() * (myMax - myMin +1)) + myMin
+  return num;
+}
